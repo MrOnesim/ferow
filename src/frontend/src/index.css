@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Poppins", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --font-mono: monospace;
+    --radius: 0.75rem;
+
+    /* FEROW dark-mode-first palette — OKLCH navy institutional */
+    --background: 0.07 0.008 270;
+    --foreground: 0.97 0 0;
+    --card: 0.1 0.01 270;
+    --card-foreground: 0.97 0 0;
+    --popover: 0.12 0.01 270;
+    --popover-foreground: 0.97 0 0;
+
+    /* FEROW blue #1E3A8A -> oklch(0.38 0.16 264) */
+    --primary: 0.38 0.16 264;
+    --primary-foreground: 0.97 0 0;
+
+    --secondary: 0.15 0.012 270;
+    --secondary-foreground: 0.85 0 0;
+    --muted: 0.13 0.008 270;
+    --muted-foreground: 0.62 0.012 270;
+
+    --accent: 0.5 0.18 264;
+    --accent-foreground: 0.97 0 0;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.97 0 0;
+
+    --border: 0.18 0.01 270;
+    --input: 0.15 0.01 270;
+    --ring: 0.5 0.18 264;
+
+    --chart-1: 0.5 0.18 264;
+    --chart-2: 0.65 0.15 40;
+    --chart-3: 0.55 0.16 140;
+    --chart-4: 0.58 0.14 200;
+    --chart-5: 0.62 0.17 320;
+
+    --sidebar: 0.1 0.01 270;
+    --sidebar-foreground: 0.97 0 0;
+    --sidebar-primary: 0.5 0.18 264;
+    --sidebar-primary-foreground: 0.97 0 0;
+    --sidebar-accent: 0.15 0.012 270;
+    --sidebar-accent-foreground: 0.85 0 0;
+    --sidebar-border: 0.18 0.01 270;
+    --sidebar-ring: 0.5 0.18 264;
+
+    /* FEROW custom tokens */
+    --ferow-navy: oklch(0.38 0.16 264);
+    --ferow-navy-light: oklch(0.5 0.18 264);
+    --ferow-dark: oklch(0.07 0.008 270);
+    --ferow-white: oklch(0.97 0 0);
+    --ferow-gold: oklch(0.78 0.16 85);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transition-colors {
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s
+      ease;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-smooth font-display;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 text-foreground px-6 py-3 rounded-lg font-semibold transition-smooth font-display;
+    border-color: oklch(var(--foreground) / 0.4);
+  }
+
+  .btn-secondary:hover {
+    background-color: oklch(var(--foreground) / 0.1);
+  }
+
+  .btn-outline-blue {
+    @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-smooth font-display;
+  }
+
+  .section-heading {
+    @apply text-4xl font-display font-bold text-foreground text-center mb-2;
+  }
+
+  .gradient-accent {
+    background: linear-gradient(
+      135deg,
+      var(--ferow-navy) 0%,
+      var(--ferow-navy-light) 100%
+    );
+  }
+
+  .gradient-hero {
+    background: linear-gradient(
+      to bottom,
+      oklch(0.07 0.008 270 / 0.3) 0%,
+      oklch(0.38 0.16 264 / 0.6) 50%,
+      oklch(0.07 0.008 270 / 0.85) 100%
+    );
+  }
+
+  .card-elevated {
+    @apply bg-card border rounded-xl shadow-elevated;
+    border-color: oklch(var(--border) / 0.3);
+  }
+
+  .card-hover {
+    @apply transition-smooth hover:-translate-y-1 hover:shadow-glow;
+  }
+
+  .card-hover:hover {
+    border-color: oklch(var(--primary) / 0.4);
+  }
+
+  .section-alt {
+    background: oklch(0.1 0.01 270);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .blue-underline::after {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 4px;
+    background: var(--ferow-navy-light);
+    border-radius: 2px;
+    margin: 0.75rem auto 0;
+  }
+
+  .nav-link {
+    @apply hover:text-foreground transition-colors font-medium text-sm relative;
+    color: oklch(var(--foreground) / 0.8);
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--ferow-navy-light);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  .badge-category {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium font-display;
+  }
+}

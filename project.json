@@ -1,0 +1,26 @@
+{
+  "overview": "Site web institutionnel de FEROW (Fédération Nationale des Mouvements de Soutien à Romuald Wadagni) — un mouvement de jeunesse engagé. Inclut une vitrine complète, un blog, et un panneau d'administration sécurisé pour gérer le contenu.",
+  "features": [
+    "Page d'accueil avec hero animé, sections valeurs, activités, et formulaire d'adhésion",
+    "Section actions & réalisations avec filtres par catégorie et compteurs animés",
+    "Blog public avec liste d'articles et pages d'articles complets",
+    "Panneau admin sécurisé avec CMS (créer/modifier/supprimer/publier des articles)",
+    "Éditeur de texte riche et upload d'images pour les articles",
+    "Design institutionnel premium — bleu #1E3A8A, animations Framer Motion, responsive mobile-first",
+    "Bouton WhatsApp flottant et navbar sticky"
+  ],
+  "category": "institutional-website",
+  "tags": [
+    "institutional",
+    "cms",
+    "blog",
+    "admin",
+    "youth",
+    "africa",
+    "political",
+    "movement",
+    "framer-motion",
+    "tailwind"
+  ],
+  "last_updated": "2026-04-23T20:05:11.025Z"
+}
