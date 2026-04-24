@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { href: "/#apropos", label: "À propos", hash: "apropos" },
   { href: "/#actions", label: "Actions", hash: "actions" },
   { href: "/blog", label: "Blog", hash: "" },
+  { href: "/membres", label: "Membres", hash: "" },
   { href: "/#rejoindre", label: "Rejoindre", hash: "rejoindre" },
 ];
 

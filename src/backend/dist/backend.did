@@ -49,17 +49,25 @@ service : {
    (_ImmutableObjectStorageRefillResult);
   _immutableObjectStorageUpdateGatewayPrincipals: () -> ();
   _initializeAccessControl: () -> ();
+  _registerAsPresident: () -> ();
+  addAssistantAdmin: (target: principal) -> ();
   assignCallerUserRole: (user: principal, role: UserRole) -> ();
   createArticle: (title: text, content: text, excerpt: text, image:
    ExternalBlob, category: text) -> (Article);
   deleteArticle: (id: nat) -> (bool);
+  getAdminList: () -> (vec record {
+                             principal;
+                             text;
+                           }) query;
   getAllArticles: () -> (vec Article) query;
   getArticleById: (id: nat) -> (opt Article) query;
   getCallerUserRole: () -> (UserRole) query;
   getJoinSubmissions: () -> (vec JoinSubmission) query;
+  getPresidentPrincipal: () -> (opt principal) query;
   getPublishedArticles: () -> (vec Article) query;
   getRecentArticles: (limit: nat) -> (vec Article) query;
   isCallerAdmin: () -> (bool) query;
+  removeAssistantAdmin: (target: principal) -> ();
   submitJoinForm: (name: text, email: text, phone: text, city: text) -> ();
   togglePublished: (id: nat) -> (bool);
   updateArticle: (id: nat, title: text, content: text, excerpt: text, image:

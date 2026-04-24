@@ -68,6 +68,8 @@ export function Layout({ children, hideNav = false }: LayoutProps) {
                   { label: "Accueil", href: "/" },
                   { label: "À propos", href: "/#apropos" },
                   { label: "Nos Actions", href: "/#actions" },
+                  { label: "Membres", href: "/membres" },
+                  { label: "Galerie", href: "/galerie" },
                   { label: "Blog & Actualités", href: "/blog" },
                   { label: "Rejoindre FEROW", href: "/#rejoindre" },
                 ].map((link) => (

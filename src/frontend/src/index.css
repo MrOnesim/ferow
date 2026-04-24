@@ -193,4 +193,64 @@
   .badge-category {
     @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium font-display;
   }
+
+  /* Member directory & gallery card patterns */
+  .member-card {
+    @apply bg-card border rounded-xl shadow-elevated overflow-hidden transition-smooth hover:-translate-y-2;
+    border-color: oklch(var(--border) / 0.3);
+  }
+
+  .member-card:hover {
+    border-color: oklch(var(--primary) / 0.4);
+    box-shadow: 0 16px 32px -6px rgba(0, 0, 0, 0.6), 0 0 1px
+      rgba(30, 58, 138, 0.5);
+  }
+
+  /* Admin form group styling */
+  .form-group {
+    @apply space-y-2;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-foreground font-display;
+  }
+
+  .form-input {
+    @apply w-full bg-input border border-border rounded-lg px-4 py-2 text-foreground placeholder-muted-foreground transition-smooth focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+
+  .form-select {
+    @apply w-full bg-input border border-border rounded-lg px-4 py-2 text-foreground transition-smooth focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+
+  .btn-admin-delete {
+    @apply px-4 py-2 rounded-lg font-medium transition-smooth bg-destructive/20 text-destructive hover:bg-destructive hover:text-destructive-foreground font-display;
+  }
+
+  .btn-admin-primary {
+    @apply px-4 py-2 rounded-lg font-medium transition-smooth bg-primary text-primary-foreground hover:opacity-90 font-display;
+  }
+
+  /* Admin table/list styling */
+  .admin-table {
+    @apply w-full border-collapse;
+  }
+
+  .admin-table th {
+    @apply bg-card border-b border-border px-4 py-3 text-left text-sm font-semibold text-foreground font-display;
+  }
+
+  .admin-table td {
+    @apply px-4 py-3 border-b border-border text-sm text-foreground;
+  }
+
+  .admin-table tbody tr {
+    @apply hover:bg-muted/30 transition-smooth;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium font-display;
+    background-color: oklch(var(--primary) / 0.2);
+    color: oklch(var(--accent));
+  }
 }

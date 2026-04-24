@@ -38,16 +38,20 @@ export enum UserRole {
     guest = "guest"
 }
 export interface backendInterface {
+    addAssistantAdmin(target: Principal): Promise<void>;
     assignCallerUserRole(user: Principal, role: UserRole): Promise<void>;
     createArticle(title: string, content: string, excerpt: string, image: ExternalBlob, category: string): Promise<Article>;
     deleteArticle(id: bigint): Promise<boolean>;
+    getAdminList(): Promise<Array<[Principal, string]>>;
     getAllArticles(): Promise<Array<Article>>;
     getArticleById(id: bigint): Promise<Article | null>;
     getCallerUserRole(): Promise<UserRole>;
     getJoinSubmissions(): Promise<Array<JoinSubmission>>;
+    getPresidentPrincipal(): Promise<Principal | null>;
     getPublishedArticles(): Promise<Array<Article>>;
     getRecentArticles(limit: bigint): Promise<Array<Article>>;
     isCallerAdmin(): Promise<boolean>;
+    removeAssistantAdmin(target: Principal): Promise<void>;
     submitJoinForm(name: string, email: string, phone: string, city: string): Promise<void>;
     togglePublished(id: bigint): Promise<boolean>;
     updateArticle(id: bigint, title: string, content: string, excerpt: string, image: ExternalBlob, category: string): Promise<boolean>;

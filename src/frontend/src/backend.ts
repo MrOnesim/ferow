@@ -131,16 +131,21 @@ export interface backendInterface {
     _immutableObjectStorageRefillCashier(refillInformation: _ImmutableObjectStorageRefillInformation | null): Promise<_ImmutableObjectStorageRefillResult>;
     _immutableObjectStorageUpdateGatewayPrincipals(): Promise<void>;
     _initializeAccessControl(): Promise<void>;
+    _registerAsPresident(): Promise<void>;
+    addAssistantAdmin(target: Principal): Promise<void>;
     assignCallerUserRole(user: Principal, role: UserRole): Promise<void>;
     createArticle(title: string, content: string, excerpt: string, image: ExternalBlob, category: string): Promise<Article>;
     deleteArticle(id: bigint): Promise<boolean>;
+    getAdminList(): Promise<Array<[Principal, string]>>;
     getAllArticles(): Promise<Array<Article>>;
     getArticleById(id: bigint): Promise<Article | null>;
     getCallerUserRole(): Promise<UserRole>;
     getJoinSubmissions(): Promise<Array<JoinSubmission>>;
+    getPresidentPrincipal(): Promise<Principal | null>;
     getPublishedArticles(): Promise<Array<Article>>;
     getRecentArticles(limit: bigint): Promise<Array<Article>>;
     isCallerAdmin(): Promise<boolean>;
+    removeAssistantAdmin(target: Principal): Promise<void>;
     submitJoinForm(name: string, email: string, phone: string, city: string): Promise<void>;
     togglePublished(id: bigint): Promise<boolean>;
     updateArticle(id: bigint, title: string, content: string, excerpt: string, image: ExternalBlob, category: string): Promise<boolean>;
@@ -246,6 +251,34 @@ export class Backend implements backendInterface {
             return result;
         }
     }
+    async _registerAsPresident(): Promise<void> {
+        if (this.processError) {
+            try {
+                const result = await this.actor._registerAsPresident();
+                return result;
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            const result = await this.actor._registerAsPresident();
+            return result;
+        }
+    }
+    async addAssistantAdmin(arg0: Principal): Promise<void> {
+        if (this.processError) {
+            try {
+                const result = await this.actor.addAssistantAdmin(arg0);
+                return result;
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            const result = await this.actor.addAssistantAdmin(arg0);
+            return result;
+        }
+    }
     async assignCallerUserRole(arg0: Principal, arg1: UserRole): Promise<void> {
         if (this.processError) {
             try {
@@ -285,6 +318,20 @@ export class Backend implements backendInterface {
             }
         } else {
             const result = await this.actor.deleteArticle(arg0);
+            return result;
+        }
+    }
+    async getAdminList(): Promise<Array<[Principal, string]>> {
+        if (this.processError) {
+            try {
+                const result = await this.actor.getAdminList();
+                return result;
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            const result = await this.actor.getAdminList();
             return result;
         }
     }
@@ -344,6 +391,20 @@ export class Backend implements backendInterface {
             return result;
         }
     }
+    async getPresidentPrincipal(): Promise<Principal | null> {
+        if (this.processError) {
+            try {
+                const result = await this.actor.getPresidentPrincipal();
+                return from_candid_opt_n18(this._uploadFile, this._downloadFile, result);
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            const result = await this.actor.getPresidentPrincipal();
+            return from_candid_opt_n18(this._uploadFile, this._downloadFile, result);
+        }
+    }
     async getPublishedArticles(): Promise<Array<Article>> {
         if (this.processError) {
             try {
@@ -383,6 +444,20 @@ export class Backend implements backendInterface {
             }
         } else {
             const result = await this.actor.isCallerAdmin();
+            return result;
+        }
+    }
+    async removeAssistantAdmin(arg0: Principal): Promise<void> {
+        if (this.processError) {
+            try {
+                const result = await this.actor.removeAssistantAdmin(arg0);
+                return result;
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            const result = await this.actor.removeAssistantAdmin(arg0);
             return result;
         }
     }
@@ -443,6 +518,9 @@ function from_candid__ImmutableObjectStorageRefillResult_n4(_uploadFile: (file: 
 }
 async function from_candid_opt_n15(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: [] | [_Article]): Promise<Article | null> {
     return value.length === 0 ? null : await from_candid_Article_n11(_uploadFile, _downloadFile, value[0]);
+}
+function from_candid_opt_n18(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: [] | [Principal]): Principal | null {
+    return value.length === 0 ? null : value[0];
 }
 function from_candid_opt_n6(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: [] | [boolean]): boolean | null {
     return value.length === 0 ? null : value[0];

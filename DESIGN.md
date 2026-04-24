@@ -36,6 +36,9 @@
 | Hero | `--background` (#0B0B0B) | none | Full viewport, centered text, gradient overlay |
 | Content Sections | `--background` (#0B0B0B) | none | Default page zones, alternating card sections |
 | Cards | `--card` (#111827) | border-border/20 | Elevated content, values, activities, blog |
+| Member Directory | `--background` (#0B0B0B) | none | Grid of member cards with photo, name, title, bio. Responsive: 1 col mobile, 2 col tablet, 3-4 col desktop |
+| Gallery Admin | `--card` (#111827) | border-border/20 | Photo grid preview (3 cols), file upload input, delete buttons per photo |
+| Admin Access Tab | `--card` (#111827) | border-border/20 | Table of current admins (president/assistant), add assistant form, revoke buttons |
 | Form Inputs | `--input` (#0D0D0D) | border-border | Dark input backgrounds, blue ring focus |
 | Footer | `--card` (#111827) | border-t border-border/20 | Contact, social, copyright |
 
@@ -43,10 +46,14 @@
 
 - **Buttons:** Primary (solid #1E3A8A, white text, px-6 py-3, rounded-lg). Secondary (outlined white, border-2, hover darkens). All have transition-smooth.
 - **Cards:** bg-card, border-border/20, rounded-xl, shadow-elevated. Hover: slight lift via transform or opacity. Icons inside cards styled with accent blue.
+- **Member Cards:** Photo with 16:9 aspect ratio, name (text-lg font-semibold), title (text-sm muted), bio (text-sm body). Hover: lift 8px, border accent glow, enhanced shadow.
+- **Gallery Admin:** Dark form with file inputs (blue ring focus), photo grid preview (3 columns on desktop, responsive), delete button (red/destructive), reorder drag handles (if applicable).
+- **Admin Access Tab:** List of current admins (table: president + assistant roles), add assistant form (email/principal input, create button), revoke buttons on each row (red/destructive).
 - **Section Headings:** text-4xl font-display font-bold, text-foreground, centered, text-balance. Optional blue underline accent (width-12 h-1 mx-auto mt-2 gradient-accent).
 - **Statistics:** Large bold numbers in accent blue (#3B82F6), labels in muted-foreground. Counters use Framer Motion count-up.
 - **Form Elements:** Dark backgrounds, white text, rounded-lg, blue focus ring (ring-2 ring-accent), font-body.
 - **Badges/Tags:** Small bg-primary/20 or bg-accent/20, text-accent, rounded-full, px-3 py-1, font-medium.
+- **Admin Status Badge:** bg-primary/20, text-accent, px-2.5 py-0.5, rounded-full, text-xs font-medium. Indicates active/inactive admin status.
 
 ## Motion & Interactions
 

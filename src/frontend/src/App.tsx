@@ -17,6 +17,8 @@ const BlogListPage = lazy(() => import("./pages/BlogListPage"));
 const BlogDetailPage = lazy(() => import("./pages/BlogDetailPage"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 const AdminArticleForm = lazy(() => import("./pages/AdminArticleForm"));
+const GalleryPage = lazy(() => import("./pages/GalleryPage"));
+const MembresPage = lazy(() => import("./pages/MembresPage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -87,6 +89,18 @@ const adminEditArticleRoute = createRoute({
   ),
 });
 
+const galerieRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/galerie",
+  component: GalleryPage,
+});
+
+const membresRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/membres",
+  component: MembresPage,
+});
+
 const routeTree = rootRoute.addChildren([
   indexRoute,
   blogRoute,
@@ -94,6 +108,8 @@ const routeTree = rootRoute.addChildren([
   adminRoute,
   adminNewArticleRoute,
   adminEditArticleRoute,
+  galerieRoute,
+  membresRoute,
 ]);
 
 const router = createRouter({ routeTree });

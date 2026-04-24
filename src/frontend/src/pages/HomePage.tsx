@@ -16,6 +16,7 @@ import { useState } from "react";
 import { AnimatedCounter } from "../components/AnimatedCounter";
 import { ArticleCard } from "../components/ArticleCard";
 import { CategoryFilter } from "../components/CategoryFilter";
+import { GallerySection } from "../components/GallerySection";
 import { Layout } from "../components/Layout";
 import { SectionHeading } from "../components/SectionHeading";
 import { useGetRecentArticles } from "../hooks/useArticles";
@@ -684,6 +685,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ─── GALLERY ─── */}
+      <GallerySection />
 
       {/* ─── IMPACT SECTION ─── */}
       <section

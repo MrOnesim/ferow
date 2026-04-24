@@ -46,6 +46,7 @@ actor {
       var blocks : [var [var ?Article__363538396]];
       var elementIndex : Nat__490723111
     };
+  stable presidentHolder : {var value : ?Principal};
   stable submissions :
     {
       var blockIndex : Nat__490723111;
