@@ -17,7 +17,15 @@ const CATEGORY_BADGE: Record<string, string> = {
   leadership: "bg-violet-900/30 text-violet-400 border-violet-400/30",
 };
 
-export function GallerySection() {
+interface GallerySectionProps {
+  title?: string;
+  subtitle?: string;
+}
+
+export function GallerySection({
+  title = "Notre Galerie",
+  subtitle = "Revivez nos moments forts en images",
+}: GallerySectionProps) {
   const [activeCategory, setActiveCategory] = useState<GalleryCategory | "all">(
     "all",
   );
@@ -40,10 +48,7 @@ export function GallerySection() {
       id="galerie"
     >
       <div className="container mx-auto px-4">
-        <SectionHeading
-          title="Notre Galerie"
-          subtitle="Revivez nos moments forts en images"
-        />
+        <SectionHeading title={title} subtitle={subtitle} />
 
         {/* Category filter */}
         <div

@@ -58,7 +58,7 @@ const CATEGORY_LABELS: Record<string, string> = {
 };
 
 const CATEGORY_COLORS: Record<string, string> = {
-  education: "bg-blue-900/30 text-blue-400 border-blue-400/20",
+  education: "bg-primary/20 text-primary border-primary/30",
   social: "bg-emerald-900/30 text-emerald-400 border-emerald-400/20",
   formation: "bg-violet-900/30 text-violet-400 border-violet-400/20",
   leadership: "bg-amber-900/30 text-amber-400 border-amber-400/20",
@@ -72,7 +72,7 @@ const GALLERY_CATEGORIES = [
 ];
 
 const GALLERY_CATEGORY_COLORS: Record<string, string> = {
-  evenements: "bg-blue-900/30 text-blue-400 border-blue-400/20",
+  evenements: "bg-primary/20 text-primary border-primary/30",
   formations: "bg-violet-900/30 text-violet-400 border-violet-400/20",
   actions_sociales: "bg-emerald-900/30 text-emerald-400 border-emerald-400/20",
   leadership: "bg-amber-900/30 text-amber-400 border-amber-400/20",
@@ -470,7 +470,7 @@ function MembresTab() {
             Aucun membre enregistré
           </p>
           <p className="text-muted-foreground text-sm">
-            Ajoutez les membres et dirigeants de FEROW.
+            Ajoutez les membres et dirigeants de Pantheon.
           </p>
         </div>
       ) : (
@@ -760,7 +760,7 @@ function GalerieTab() {
             Galerie vide
           </p>
           <p className="text-muted-foreground text-sm">
-            Uploadez les premières photos de FEROW.
+            Uploadez les premières photos de Pantheon.
           </p>
         </div>
       ) : (
@@ -973,7 +973,7 @@ function AccesTab() {
                             Président
                           </span>
                         ) : (
-                          <span className="text-xs px-2 py-0.5 rounded-full bg-blue-900/30 text-blue-400 border border-blue-400/20">
+                          <span className="text-xs px-2 py-0.5 rounded-full bg-primary/20 text-primary border border-primary/30">
                             Assistant
                           </span>
                         )}
@@ -1169,7 +1169,7 @@ export default function AdminDashboard() {
             </div>
             <div className="min-w-0">
               <p className="font-display font-black text-foreground text-sm leading-none">
-                FEROW
+                Pantheon
               </p>
               <p className="text-muted-foreground text-xs mt-0.5">Admin</p>
             </div>
@@ -1231,8 +1231,8 @@ export default function AdminDashboard() {
               {activeTab === "submissions" &&
                 `${submissions.length} soumission${submissions.length !== 1 ? "s" : ""} reçue${submissions.length !== 1 ? "s" : ""}`}
               {activeTab === "membres" &&
-                "Gérez les membres et dirigeants FEROW"}
-              {activeTab === "galerie" && "Gérez la galerie photos de FEROW"}
+                "Gérez les membres et dirigeants Pantheon"}
+              {activeTab === "galerie" && "Gérez la galerie photos de Pantheon"}
               {activeTab === "acces" &&
                 "Contrôlez l'accès au panel d'administration"}
             </p>
@@ -1330,7 +1330,7 @@ export default function AdminDashboard() {
                     Aucun article pour l'instant
                   </p>
                   <p className="text-muted-foreground text-sm mb-5">
-                    Commencez à créer du contenu pour votre site FEROW.
+                    Commencez à créer du contenu pour votre site Pantheon.
                   </p>
                   <Link
                     to="/admin/articles/new"

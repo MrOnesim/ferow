@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
-import { AlertCircle, Search, Users } from "lucide-react";
+import { AlertCircle, Globe, Search, Star, Users } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { Layout } from "../components/Layout";
@@ -9,7 +9,6 @@ import { SectionHeading } from "../components/SectionHeading";
 import { useGetMembers } from "../hooks/useMembers";
 import type { Member } from "../types";
 
-// Derive photo URL from ExternalBlob
 function getPhotoUrl(photo: Member["photo"]): string {
   if (!photo) return "/assets/images/placeholder.svg";
   try {
@@ -26,6 +25,12 @@ const CATEGORIES = [
   { value: "jeunesse", label: "Jeunesse" },
   { value: "formation", label: "Formation" },
   { value: "international", label: "International" },
+];
+
+const INTRO_STATS = [
+  { icon: Globe, value: "15+", label: "Pays représentés" },
+  { icon: Users, value: "500+", label: "Membres actifs" },
+  { icon: Star, value: "8", label: "Années d'excellence" },
 ];
 
 function MemberCard({ member, index }: { member: Member; index: number }) {
@@ -54,18 +59,35 @@ function MemberCard({ member, index }: { member: Member; index: number }) {
         />
         {/* Gradient overlay at bottom */}
         <div className="absolute inset-0 bg-gradient-to-t from-card/95 via-card/10 to-transparent pointer-events-none" />
-        {/* Blue shimmer on hover */}
+        {/* Gold shimmer on hover */}
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-primary/20 to-transparent pointer-events-none" />
       </div>
 
       {/* Content */}
       <div className="p-5 flex flex-col flex-1">
-        <h3 className="font-display font-bold text-foreground text-lg leading-tight mb-1 truncate">
+        {/* Thin gold decorative line above name */}
+        <div
+          className="w-10 h-[2px] rounded-full mb-3"
+          style={{ background: "var(--pantheon-gold)" }}
+          aria-hidden="true"
+        />
+
+        <h3 className="font-display font-black text-foreground text-xl leading-tight mb-1 truncate">
           {member.name}
         </h3>
-        <p className="text-primary text-sm font-semibold mb-3 leading-snug line-clamp-1">
+
+        <p className="text-primary text-sm font-bold mb-1 leading-snug line-clamp-1">
           {member.title}
         </p>
+
+        {/* Membre Pantheon badge in gold */}
+        <span
+          className="text-xs font-display font-semibold uppercase tracking-wider mb-3"
+          style={{ color: "var(--pantheon-gold-light)" }}
+        >
+          Membre Pantheon
+        </span>
+
         <p
           className={`text-muted-foreground text-sm leading-relaxed ${expanded ? "" : "line-clamp-3"}`}
         >
@@ -94,9 +116,11 @@ function MemberCardSkeleton({ index }: { index: number }) {
     >
       <Skeleton className="aspect-[4/5] w-full" />
       <div className="p-5 space-y-2">
-        <Skeleton className="h-5 w-3/4" />
+        <Skeleton className="h-2 w-10 mb-3" />
+        <Skeleton className="h-6 w-3/4" />
         <Skeleton className="h-4 w-1/2" />
-        <Skeleton className="h-3 w-full" />
+        <Skeleton className="h-3 w-2/5" />
+        <Skeleton className="h-3 w-full mt-2" />
         <Skeleton className="h-3 w-5/6" />
         <Skeleton className="h-3 w-4/5" />
       </div>
@@ -110,7 +134,6 @@ export default function MembresPage() {
 
   const { data: members = [], isLoading, isError } = useGetMembers();
 
-  // Filter by search & category (category derived from title keywords)
   const filtered = members.filter((m) => {
     const matchesSearch =
       m.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -126,9 +149,7 @@ export default function MembresPage() {
         titleLower.includes("trésorier")
       );
     }
-    if (activeCategory === "communication") {
-      return titleLower.includes("comm");
-    }
+    if (activeCategory === "communication") return titleLower.includes("comm");
     if (activeCategory === "jeunesse") {
       return titleLower.includes("jeunesse") || titleLower.includes("youth");
     }
@@ -147,7 +168,6 @@ export default function MembresPage() {
     <Layout>
       {/* ── Hero ── */}
       <section className="relative pt-28 pb-20 bg-card border-b border-border/30 overflow-hidden">
-        {/* Background gradient blob */}
         <div
           className="absolute inset-0 pointer-events-none"
           aria-hidden="true"
@@ -156,17 +176,16 @@ export default function MembresPage() {
             className="absolute -top-20 -left-20 w-[600px] h-[600px] rounded-full opacity-10"
             style={{
               background:
-                "radial-gradient(circle, oklch(0.5 0.18 264) 0%, transparent 70%)",
+                "radial-gradient(circle, oklch(0.82 0.10 85) 0%, transparent 70%)",
             }}
           />
           <div
             className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full opacity-8"
             style={{
               background:
-                "radial-gradient(circle, oklch(0.38 0.16 264) 0%, transparent 70%)",
+                "radial-gradient(circle, oklch(0.75 0.12 85) 0%, transparent 70%)",
             }}
           />
-          {/* Diagonal line pattern */}
           <div
             className="absolute inset-0 opacity-[0.03]"
             style={{
@@ -192,30 +211,29 @@ export default function MembresPage() {
             >
               <div className="w-1 h-8 bg-primary rounded-full" />
               <span className="text-primary font-display font-semibold text-sm uppercase tracking-widest">
-                Annuaire FEROW
+                Annuaire Pantheon
               </span>
             </motion.div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-foreground leading-[1.05] mb-5">
-              Notre{" "}
+              Les{" "}
               <span className="relative inline-block">
-                <span className="text-primary">Équipe</span>
+                <span className="text-primary">Visionnaires</span>
                 <motion.span
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ delay: 0.6, duration: 0.5, ease: "easeOut" }}
                   className="absolute -bottom-1 left-0 w-full h-[3px] bg-primary/50 rounded-full origin-left"
                 />
-              </span>
+              </span>{" "}
+              Pantheon
             </h1>
 
             <p className="text-muted-foreground text-lg leading-relaxed max-w-xl">
-              Découvrez les dirigeants et membres actifs de FEROW — femmes et
-              hommes engagés qui construisent l&apos;Afrique de demain avec
-              détermination.
+              Découvrez les figures d&apos;excellence qui portent la vision
+              Pantheon — des leaders engagés, des acteurs du changement.
             </p>
 
-            {/* Stats pills */}
             {!isLoading && !isError && members.length > 0 && (
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
@@ -232,11 +250,64 @@ export default function MembresPage() {
         </div>
       </section>
 
+      {/* ── Intro Stats Bar ── */}
+      <section className="bg-background border-b border-border/20 py-10">
+        <div className="container mx-auto px-4">
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center text-muted-foreground text-base mb-8 max-w-2xl mx-auto leading-relaxed"
+          >
+            Nos membres sont présents dans{" "}
+            <span className="text-primary font-bold">15+ pays</span> et
+            représentent l&apos;élite africaine et de la diaspora — une
+            communauté d&apos;excellence au service du continent.
+          </motion.p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
+            {INTRO_STATS.map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 + 0.2 }}
+                className="flex flex-col items-center gap-2 p-5 rounded-xl bg-card border border-border/30 text-center"
+                data-ocid={`membres.stat.${i + 1}`}
+              >
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center mb-1"
+                  style={{
+                    background: "oklch(0.75 0.12 85 / 0.15)",
+                    border: "1px solid oklch(0.75 0.12 85 / 0.3)",
+                  }}
+                >
+                  <stat.icon
+                    className="w-5 h-5"
+                    style={{ color: "var(--pantheon-gold)" }}
+                  />
+                </div>
+                <span
+                  className="text-2xl font-display font-black"
+                  style={{ color: "var(--pantheon-gold)" }}
+                >
+                  {stat.value}
+                </span>
+                <span className="text-muted-foreground text-sm font-display">
+                  {stat.label}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Sticky Filters & Search ── */}
       <div className="sticky top-16 z-30 bg-background/95 backdrop-blur-md border-b border-border/20">
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
-            {/* Category tabs */}
             <div
               className="flex gap-2 flex-wrap"
               role="tablist"
@@ -261,7 +332,6 @@ export default function MembresPage() {
               ))}
             </div>
 
-            {/* Search */}
             <div className="relative w-full sm:w-72 flex-shrink-0">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
               <Input
@@ -321,15 +391,34 @@ export default function MembresPage() {
               className="flex flex-col items-center justify-center py-24 text-center"
               data-ocid="membres.empty_state"
             >
-              <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center mb-6">
-                <Users className="w-10 h-10 text-muted-foreground" />
+              <div
+                className="w-24 h-24 rounded-full flex items-center justify-center mb-6"
+                style={{
+                  background: "oklch(0.75 0.12 85 / 0.1)",
+                  border: "1px solid oklch(0.75 0.12 85 / 0.25)",
+                }}
+              >
+                <Users
+                  className="w-12 h-12"
+                  style={{ color: "var(--pantheon-gold)" }}
+                />
               </div>
-              <h3 className="font-display font-bold text-foreground text-xl mb-2">
-                Aucun membre disponible pour le moment.
+              <h3 className="font-display font-black text-foreground text-2xl mb-3">
+                L&apos;élite se révèle bientôt
               </h3>
-              <p className="text-muted-foreground max-w-sm">
-                L&apos;annuaire sera bientôt disponible. Revenez prochainement.
+              <p className="text-muted-foreground max-w-sm text-base leading-relaxed">
+                Les profils de nos membres seront bientôt disponibles. Rejoignez
+                l&apos;élite Pantheon dès aujourd&apos;hui.
               </p>
+              <motion.a
+                href="/#rejoindre"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                className="mt-8 inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-primary text-primary-foreground font-display font-bold text-sm hover:opacity-90 transition-smooth"
+                data-ocid="membres.empty_join_cta"
+              >
+                Rejoindre maintenant
+              </motion.a>
             </motion.div>
           )}
 
@@ -400,13 +489,13 @@ export default function MembresPage() {
             className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[200px] opacity-5"
             style={{
               background:
-                "radial-gradient(ellipse, oklch(0.5 0.18 264) 0%, transparent 70%)",
+                "radial-gradient(ellipse, oklch(0.82 0.10 85) 0%, transparent 70%)",
             }}
           />
         </div>
         <div className="container mx-auto px-4 text-center relative">
           <SectionHeading
-            title="Vous souhaitez faire partie de FEROW ?"
+            title="Vous souhaitez faire partie de Pantheon ?"
             subtitle="Rejoignez des milliers de jeunes leaders qui construisent l'Afrique de demain. Votre engagement compte."
           />
           <motion.a

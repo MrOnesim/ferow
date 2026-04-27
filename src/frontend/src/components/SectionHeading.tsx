@@ -6,6 +6,8 @@ interface SectionHeadingProps {
   className?: string;
   align?: "center" | "left";
   accent?: boolean;
+  /** Optional smaller eyebrow label above the title */
+  eyebrow?: string;
 }
 
 export function SectionHeading({
@@ -14,6 +16,7 @@ export function SectionHeading({
   className,
   align = "center",
   accent = true,
+  eyebrow,
 }: SectionHeadingProps) {
   return (
     <div
@@ -23,16 +26,26 @@ export function SectionHeading({
         className,
       )}
     >
+      {eyebrow && (
+        <span className="inline-block text-primary font-semibold text-xs uppercase tracking-[0.2em] mb-3 font-display">
+          {eyebrow}
+        </span>
+      )}
       <h2
         className={cn(
           "text-3xl md:text-4xl font-display font-bold text-foreground",
-          accent && "blue-underline",
+          accent && "gold-underline",
         )}
       >
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-6 text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+        <p
+          className={cn(
+            "mt-6 text-muted-foreground text-lg leading-relaxed",
+            align === "center" ? "max-w-2xl mx-auto" : "max-w-2xl",
+          )}
+        >
           {subtitle}
         </p>
       )}

@@ -48,11 +48,11 @@ export default function BlogListPage() {
         {/* Decorative gradient orbs */}
         <div
           className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 pointer-events-none blur-3xl"
-          style={{ background: "var(--ferow-navy-light)" }}
+          style={{ background: "var(--pantheon-gold-light)" }}
         />
         <div
           className="absolute bottom-0 left-0 w-72 h-72 rounded-full opacity-5 pointer-events-none blur-3xl"
-          style={{ background: "var(--ferow-navy)" }}
+          style={{ background: "var(--pantheon-gold)" }}
         />
 
         <div className="relative container mx-auto px-4 text-center">
@@ -71,8 +71,8 @@ export default function BlogListPage() {
             </h1>
 
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-              Découvrez les initiatives concrètes menées par FEROW pour impacter
-              la société. Restez informé de nos actions, formations et
+              Découvrez les initiatives concrètes menées par Pantheon pour
+              impacter la société. Restez informé de nos actions, formations et
               événements.
             </p>
           </motion.div>

@@ -17,19 +17,19 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   // Événements
   {
     id: "g1",
-    title: "Conférence nationale de la jeunesse FEROW",
+    title: "Conférence nationale de la jeunesse Pantheon",
     description:
       "Plus de 300 jeunes réunis à Cotonou pour débattre des défis de la génération africaine et tracer une feuille de route pour l'avenir.",
-    imageUrl: "https://picsum.photos/seed/ferow1/800/600",
+    imageUrl: "https://picsum.photos/seed/pantheon1/800/600",
     category: "evenements",
     date: "20 mars 2025",
   },
   {
     id: "g2",
-    title: "Cérémonie d'inauguration du siège de FEROW",
+    title: "Cérémonie d'inauguration du siège de Pantheon",
     description:
-      "Inauguration officielle du nouveau siège national de FEROW à Cotonou, en présence de représentants politiques et de membres fondateurs.",
-    imageUrl: "https://picsum.photos/seed/ferow2/800/600",
+      "Inauguration officielle du nouveau siège national de Pantheon à Cotonou, en présence de représentants politiques et de membres fondateurs.",
+    imageUrl: "https://picsum.photos/seed/pantheon2/800/600",
     category: "evenements",
     date: "14 février 2025",
   },
@@ -38,7 +38,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: "Forum régional des leaders à Porto-Novo",
     description:
       "Rencontre régionale réunissant les délégués départementaux pour harmoniser les stratégies d'action locale et renforcer la cohésion du mouvement.",
-    imageUrl: "https://picsum.photos/seed/ferow3/800/600",
+    imageUrl: "https://picsum.photos/seed/pantheon3/800/600",
     category: "evenements",
     date: "8 janvier 2025",
   },
@@ -49,7 +49,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: "Atelier d'entrepreneuriat jeunesse",
     description:
       "80 jeunes entrepreneurs formés aux fondamentaux du business plan, du financement et de la gestion d'entreprise par des experts reconnus.",
-    imageUrl: "https://picsum.photos/seed/ferow4/800/600",
+    imageUrl: "https://picsum.photos/seed/pantheon4/800/600",
     category: "formations",
     date: "15 mars 2025",
   },
@@ -58,7 +58,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: "Formation en compétences numériques",
     description:
       "Initiation au marketing digital, à la création de contenu et aux outils collaboratifs pour 60 jeunes issus de communautés sous-desservies.",
-    imageUrl: "https://picsum.photos/seed/ferow5/800/600",
+    imageUrl: "https://picsum.photos/seed/pantheon5/800/600",
     category: "formations",
     date: "22 février 2025",
   },
@@ -66,8 +66,8 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: "g6",
     title: "Séminaire de développement personnel",
     description:
-      "Deux jours de formation intensive sur la communication, la gestion du temps et le développement du leadership pour 50 jeunes membres de FEROW.",
-    imageUrl: "https://picsum.photos/seed/ferow6/800/600",
+      "Deux jours de formation intensive sur la communication, la gestion du temps et le développement du leadership pour 50 jeunes membres de Pantheon.",
+    imageUrl: "https://picsum.photos/seed/pantheon6/800/600",
     category: "formations",
     date: "10 décembre 2024",
   },
@@ -77,8 +77,8 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: "g7",
     title: "Distribution de kits scolaires à Cotonou",
     description:
-      "200 enfants défavorisés ont reçu des kits scolaires complets grâce à la mobilisation de 50 bénévoles engagés de FEROW dans les quartiers défavorisés.",
-    imageUrl: "https://picsum.photos/seed/ferow7/800/600",
+      "200 enfants défavorisés ont reçu des kits scolaires complets grâce à la mobilisation de 50 bénévoles engagés de Pantheon dans les quartiers défavorisés.",
+    imageUrl: "https://picsum.photos/seed/pantheon7/800/600",
     category: "actions-sociales",
     date: "5 mars 2025",
   },
@@ -87,7 +87,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: "Campagne de don de sang",
     description:
       "Mobilisation citoyenne avec plus de 100 donneurs de sang réunis lors d'une journée de solidarité organisée en partenariat avec la Croix-Rouge du Bénin.",
-    imageUrl: "https://picsum.photos/seed/ferow8/800/600",
+    imageUrl: "https://picsum.photos/seed/pantheon8/800/600",
     category: "actions-sociales",
     date: "18 janvier 2025",
   },
@@ -95,8 +95,8 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: "g9",
     title: "Aide alimentaire dans les quartiers précaires",
     description:
-      "Distribution de paniers alimentaires à 150 familles dans le besoin à Parakou, témoignant de l'ancrage social de FEROW auprès des plus vulnérables.",
-    imageUrl: "https://picsum.photos/seed/ferow9/800/600",
+      "Distribution de paniers alimentaires à 150 familles dans le besoin à Parakou, témoignant de l'ancrage social de Pantheon auprès des plus vulnérables.",
+    imageUrl: "https://picsum.photos/seed/pantheon9/800/600",
     category: "actions-sociales",
     date: "24 novembre 2024",
   },
@@ -104,19 +104,19 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   // Leadership
   {
     id: "g10",
-    title: "Masterclass avec Romuald Wadagni",
+    title: "Masterclass sur la Vision Économique",
     description:
-      "Séance exclusive d'échanges et de mentorat avec Romuald Wadagni sur la vision économique du Bénin et le rôle des jeunes dans le développement national.",
-    imageUrl: "https://picsum.photos/seed/ferow10/800/600",
+      "Séance exclusive d'échanges et de mentorat sur la vision économique du Bénin et le rôle des jeunes dans le développement national.",
+    imageUrl: "https://picsum.photos/seed/pantheon10/800/600",
     category: "leadership",
     date: "10 mars 2025",
   },
   {
     id: "g11",
-    title: "Programme FEROW Leaders 2025",
+    title: "Programme Pantheon Leaders 2025",
     description:
       "Lancement du programme annuel de formation des leaders locaux, sélectionnant 30 jeunes talents pour un parcours intensif de 6 mois sur le terrain.",
-    imageUrl: "https://picsum.photos/seed/ferow11/800/600",
+    imageUrl: "https://picsum.photos/seed/pantheon11/800/600",
     category: "leadership",
     date: "1er février 2025",
   },
@@ -125,7 +125,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: "Table ronde : Gouvernance et jeunesse africaine",
     description:
       "Discussion de haut niveau réunissant des experts en gouvernance, des élus locaux et des jeunes leaders pour co-construire l'avenir politique du Bénin.",
-    imageUrl: "https://picsum.photos/seed/ferow12/800/600",
+    imageUrl: "https://picsum.photos/seed/pantheon12/800/600",
     category: "leadership",
     date: "5 décembre 2024",
   },

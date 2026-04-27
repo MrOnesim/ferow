@@ -19,9 +19,9 @@ const buttonVariants = cva(
           "text-foreground/80 hover:bg-foreground/10 hover:text-foreground",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        hero: "bg-primary text-primary-foreground text-base px-8 py-4 rounded-lg shadow-glow-lg hover:shadow-glow animate-pulse-glow hover:opacity-90",
+        hero: "bg-primary text-primary-foreground text-base px-8 py-4 rounded-lg shadow-glow-lg animate-pulse-glow transition-all duration-500 hover:opacity-90 hover:shadow-glow",
         "hero-outline":
-          "border-2 border-foreground/50 text-foreground text-base px-8 py-4 rounded-lg hover:bg-foreground/10 hover:border-foreground",
+          "border-2 border-foreground/50 text-foreground text-base px-8 py-4 rounded-lg transition-all duration-500 hover:bg-foreground/10 hover:border-primary hover:shadow-[0_0_16px_rgba(201,168,76,0.3)]",
         link: "text-primary underline-offset-4 hover:underline p-0 h-auto",
       },
       size: {

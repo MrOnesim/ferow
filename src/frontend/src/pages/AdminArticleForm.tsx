@@ -63,7 +63,7 @@ export default function AdminArticleForm() {
       imageUrl: "",
       category: "leadership",
       published: false,
-      author: "Comité FEROW",
+      author: "Comité Pantheon",
     },
   });
 
@@ -78,7 +78,7 @@ export default function AdminArticleForm() {
           imageUrl: article.imageUrl,
           category: article.category,
           published: article.published,
-          author: article.author || "Comité FEROW",
+          author: article.author || "Comité Pantheon",
         });
         setImagePreview(article.imageUrl);
       }

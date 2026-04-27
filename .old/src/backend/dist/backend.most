@@ -1,0 +1,56 @@
+// Version: 1.0.0
+type Article__363538396 =
+  {
+    category : Text;
+    content : Text;
+    created_at : Int;
+    excerpt : Text;
+    id : Nat;
+    image : ExternalBlob__671167343;
+    published : Bool;
+    title : Text
+  };
+type Data__791452850<K, V> =
+  {var count : Nat__490723111; kvs : [var ?(K, V)]};
+type ExternalBlob__671167343 = Blob;
+type Internal__8484328<K, V> =
+  {children : [var ?Node__46230540<K, V>]; data : Data__791452850<K, V>};
+type JoinSubmission__763744151 =
+  {
+    city : Text;
+    email : Text;
+    id : Nat;
+    name : Text;
+    phone : Text;
+    submitted_at : Int
+  };
+type Leaf__809889148<K, V> = {data : Data__791452850<K, V>};
+type Map__158565046<K, V> = Map__297112838<K, V>;
+type Map__297112838<K, V> =
+  {var root : Node__46230540<K, V>; var size : Nat__490723111};
+type Map__605269027<K, V> = Map__158565046<K, V>;
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type Node__46230540<K, V> =
+  {#internal : Internal__8484328<K, V>; #leaf : Leaf__809889148<K, V>};
+type UserRole__1073662873 = {#admin; #guest; #user};
+actor {
+  stable accessControlState :
+    {
+      var adminAssigned : Bool;
+      userRoles : Map__605269027<Principal, UserRole__1073662873>
+    };
+  stable articles :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Article__363538396]];
+      var elementIndex : Nat__490723111
+    };
+  stable presidentHolder : {var value : ?Principal};
+  stable submissions :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?JoinSubmission__763744151]];
+      var elementIndex : Nat__490723111
+    }
+};

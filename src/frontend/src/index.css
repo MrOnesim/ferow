@@ -9,7 +9,7 @@
     --font-mono: monospace;
     --radius: 0.75rem;
 
-    /* FEROW dark-mode-first palette — OKLCH navy institutional */
+    /* Pantheon dark-mode-first palette — OKLCH royal gold institutional */
     --background: 0.07 0.008 270;
     --foreground: 0.97 0 0;
     --card: 0.1 0.01 270;
@@ -17,26 +17,26 @@
     --popover: 0.12 0.01 270;
     --popover-foreground: 0.97 0 0;
 
-    /* FEROW blue #1E3A8A -> oklch(0.38 0.16 264) */
-    --primary: 0.38 0.16 264;
-    --primary-foreground: 0.97 0 0;
+    /* Pantheon gold #C9A84C -> oklch(0.75 0.12 85) */
+    --primary: 0.75 0.12 85;
+    --primary-foreground: 0.07 0.008 270;
 
     --secondary: 0.15 0.012 270;
     --secondary-foreground: 0.85 0 0;
     --muted: 0.13 0.008 270;
     --muted-foreground: 0.62 0.012 270;
 
-    --accent: 0.5 0.18 264;
-    --accent-foreground: 0.97 0 0;
+    --accent: 0.82 0.1 85;
+    --accent-foreground: 0.07 0.008 270;
 
     --destructive: 0.55 0.22 25;
     --destructive-foreground: 0.97 0 0;
 
     --border: 0.18 0.01 270;
     --input: 0.15 0.01 270;
-    --ring: 0.5 0.18 264;
+    --ring: 0.82 0.1 85;
 
-    --chart-1: 0.5 0.18 264;
+    --chart-1: 0.75 0.12 85;
     --chart-2: 0.65 0.15 40;
     --chart-3: 0.55 0.16 140;
     --chart-4: 0.58 0.14 200;
@@ -44,19 +44,19 @@
 
     --sidebar: 0.1 0.01 270;
     --sidebar-foreground: 0.97 0 0;
-    --sidebar-primary: 0.5 0.18 264;
-    --sidebar-primary-foreground: 0.97 0 0;
+    --sidebar-primary: 0.75 0.12 85;
+    --sidebar-primary-foreground: 0.07 0.008 270;
     --sidebar-accent: 0.15 0.012 270;
     --sidebar-accent-foreground: 0.85 0 0;
     --sidebar-border: 0.18 0.01 270;
-    --sidebar-ring: 0.5 0.18 264;
+    --sidebar-ring: 0.82 0.1 85;
 
-    /* FEROW custom tokens */
-    --ferow-navy: oklch(0.38 0.16 264);
-    --ferow-navy-light: oklch(0.5 0.18 264);
-    --ferow-dark: oklch(0.07 0.008 270);
-    --ferow-white: oklch(0.97 0 0);
-    --ferow-gold: oklch(0.78 0.16 85);
+    /* Pantheon custom tokens */
+    --pantheon-gold: oklch(0.75 0.12 85);
+    --pantheon-gold-light: oklch(0.82 0.1 85);
+    --pantheon-dark: oklch(0.07 0.008 270);
+    --pantheon-white: oklch(0.97 0 0);
+    --pantheon-accent: oklch(0.78 0.16 85);
   }
 
   * {
@@ -113,7 +113,7 @@
     background-color: oklch(var(--foreground) / 0.1);
   }
 
-  .btn-outline-blue {
+  .btn-outline-gold {
     @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-smooth font-display;
   }
 
@@ -124,8 +124,8 @@
   .gradient-accent {
     background: linear-gradient(
       135deg,
-      var(--ferow-navy) 0%,
-      var(--ferow-navy-light) 100%
+      var(--pantheon-gold) 0%,
+      var(--pantheon-gold-light) 100%
     );
   }
 
@@ -133,14 +133,47 @@
     background: linear-gradient(
       to bottom,
       oklch(0.07 0.008 270 / 0.3) 0%,
-      oklch(0.38 0.16 264 / 0.6) 50%,
+      oklch(0.75 0.12 85 / 0.6) 50%,
       oklch(0.07 0.008 270 / 0.85) 100%
     );
   }
 
+  .section-premium {
+    @apply py-24 md:py-32;
+  }
+
+  .text-elite {
+    letter-spacing: 0.05em;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    color: oklch(var(--muted-foreground));
+    filter: sepia(0.4) saturate(1.8) hue-rotate(10deg);
+    font-family: var(--font-display);
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(
+      135deg,
+      oklch(0.85 0.12 85),
+      oklch(0.65 0.15 85)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .divider-gold {
+    height: 1px;
+    background-color: oklch(0.75 0.12 85 / 0.2);
+    border: none;
+    width: 100%;
+  }
+
   .card-elevated {
-    @apply bg-card border rounded-xl shadow-elevated;
+    @apply bg-card border rounded-xl shadow-elevated p-8;
     border-color: oklch(var(--border) / 0.3);
+    border-left: 2px solid oklch(0.75 0.12 85 / 0.5);
   }
 
   .card-hover {
@@ -159,12 +192,23 @@
     text-wrap: balance;
   }
 
+  .gold-underline::after {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 4px;
+    background: var(--pantheon-gold-light);
+    border-radius: 2px;
+    margin: 0.75rem auto 0;
+  }
+
+  /* Keep blue-underline as alias for backward compat */
   .blue-underline::after {
     content: "";
     display: block;
     width: 4rem;
     height: 4px;
-    background: var(--ferow-navy-light);
+    background: var(--pantheon-gold-light);
     border-radius: 2px;
     margin: 0.75rem auto 0;
   }
@@ -181,7 +225,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--ferow-navy-light);
+    background: var(--pantheon-gold-light);
     transition: width 0.3s ease;
   }
 
@@ -203,7 +247,7 @@
   .member-card:hover {
     border-color: oklch(var(--primary) / 0.4);
     box-shadow: 0 16px 32px -6px rgba(0, 0, 0, 0.6), 0 0 1px
-      rgba(30, 58, 138, 0.5);
+      rgba(201, 168, 76, 0.5);
   }
 
   /* Admin form group styling */

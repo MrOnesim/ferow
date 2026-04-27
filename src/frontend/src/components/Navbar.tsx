@@ -7,12 +7,13 @@ import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 const NAV_LINKS = [
-  { href: "/", label: "Accueil", hash: "" },
-  { href: "/#apropos", label: "À propos", hash: "apropos" },
+  { href: "/#apropos", label: "Notre Mission", hash: "apropos" },
+  { href: "/#valeurs", label: "Nos Valeurs", hash: "valeurs" },
   { href: "/#actions", label: "Actions", hash: "actions" },
+  { href: "/galerie", label: "Galerie", hash: "" },
+  { href: "/membres", label: "Leaders", hash: "" },
   { href: "/blog", label: "Blog", hash: "" },
-  { href: "/membres", label: "Membres", hash: "" },
-  { href: "/#rejoindre", label: "Rejoindre", hash: "rejoindre" },
+  { href: "/#rejoindre", label: "Nous rejoindre", hash: "rejoindre" },
 ];
 
 export function Navbar() {
@@ -72,13 +73,15 @@ export function Navbar() {
           className="flex items-center gap-2.5 group"
           data-ocid="navbar.logo"
         >
-          <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center shadow-glow group-hover:shadow-glow-lg transition-shadow">
-            <span className="text-primary-foreground font-display font-black text-sm tracking-tight">
-              FW
-            </span>
+          <div className="w-9 h-9 rounded-lg overflow-hidden border-2 border-primary shadow-glow group-hover:shadow-glow-lg transition-shadow flex-shrink-0">
+            <img
+              src="/assets/pantheon-logo.jpeg"
+              alt="Pantheon logo"
+              className="w-full h-full object-cover object-center"
+            />
           </div>
           <span className="font-display font-bold text-foreground text-xl tracking-tight hidden sm:block">
-            FEROW
+            Pantheon
           </span>
         </Link>
 
@@ -96,7 +99,29 @@ export function Navbar() {
                       : "",
                   )}
                   onClick={() => handleNavClick(link.href, link.hash)}
-                  data-ocid={`navbar.link.${link.label.toLowerCase().replace(/\s/g, "_").replace(/[àâ]/g, "a")}`}
+                  data-ocid={`navbar.link.${link.label
+                    .toLowerCase()
+                    .replace(/\s+/g, "_")
+                    .replace(
+                      /[àâäéèêëîïôùûüç]/g,
+                      (c) =>
+                        ({
+                          à: "a",
+                          â: "a",
+                          ä: "a",
+                          é: "e",
+                          è: "e",
+                          ê: "e",
+                          ë: "e",
+                          î: "i",
+                          ï: "i",
+                          ô: "o",
+                          ù: "u",
+                          û: "u",
+                          ü: "u",
+                          ç: "c",
+                        })[c] ?? c,
+                    )}`}
                 >
                   {link.label}
                 </Link>
@@ -134,7 +159,7 @@ export function Navbar() {
                 ? "Connexion..."
                 : isAuthenticated
                   ? "Déconnexion"
-                  : "Connexion"}
+                  : "Espace administrateur"}
           </button>
 
           <button
@@ -172,7 +197,7 @@ export function Navbar() {
                     to={link.href}
                     className="flex items-center justify-between w-full px-4 py-3 rounded-lg hover:bg-foreground/5 transition-smooth text-foreground/80 hover:text-foreground font-medium"
                     onClick={() => handleNavClick(link.href, link.hash)}
-                    data-ocid={`navbar.mobile.link.${link.label.toLowerCase()}`}
+                    data-ocid={`navbar.mobile.link.${link.label.toLowerCase().replace(/\s+/g, "_")}`}
                   >
                     {link.label}
                     <ChevronRight className="w-4 h-4 opacity-50" />
@@ -200,7 +225,7 @@ export function Navbar() {
                   className="w-full mt-1 px-4 py-3 rounded-lg bg-primary text-primary-foreground font-semibold font-display text-sm hover:opacity-90 transition-smooth disabled:opacity-50"
                   data-ocid="navbar.mobile.auth_button"
                 >
-                  {isAuthenticated ? "Se déconnecter" : "Se connecter"}
+                  {isAuthenticated ? "Se déconnecter" : "Espace administrateur"}
                 </button>
               </li>
             </ul>

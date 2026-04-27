@@ -11,7 +11,7 @@ interface LayoutProps {
 export function Layout({ children, hideNav = false }: LayoutProps) {
   const year = new Date().getFullYear();
   const hostname =
-    typeof window !== "undefined" ? window.location.hostname : "ferow.org";
+    typeof window !== "undefined" ? window.location.hostname : "pantheon.org";
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -26,18 +26,21 @@ export function Layout({ children, hideNav = false }: LayoutProps) {
             {/* Brand */}
             <div className="lg:col-span-2">
               <div className="flex items-center gap-2.5 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center shadow-glow">
-                  <span className="text-primary-foreground font-display font-black text-sm">
-                    FW
-                  </span>
+                <div className="w-10 h-10 rounded-lg overflow-hidden border-2 border-primary shadow-glow flex-shrink-0">
+                  <img
+                    src="/assets/pantheon-logo.jpeg"
+                    alt="Pantheon logo"
+                    className="w-full h-full object-cover object-center"
+                  />
                 </div>
                 <span className="font-display font-bold text-foreground text-2xl">
-                  FEROW
+                  Pantheon
                 </span>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed max-w-xs mb-6">
-                Fédération Nationale des Mouvements de Soutien à Romuald
-                Wadagni. Un mouvement dédié au leadership et à l'impact social.
+                L'excellence au service de l'Afrique. Un mouvement dédié à la
+                formation, l'inspiration et la mobilisation d'une nouvelle
+                génération de leaders d'exception.
               </p>
               <div className="flex items-center gap-3">
                 {[
@@ -71,7 +74,7 @@ export function Layout({ children, hideNav = false }: LayoutProps) {
                   { label: "Membres", href: "/membres" },
                   { label: "Galerie", href: "/galerie" },
                   { label: "Blog & Actualités", href: "/blog" },
-                  { label: "Rejoindre FEROW", href: "/#rejoindre" },
+                  { label: "Rejoindre Pantheon", href: "/#rejoindre" },
                 ].map((link) => (
                   <li key={link.href}>
                     <a
@@ -98,10 +101,10 @@ export function Layout({ children, hideNav = false }: LayoutProps) {
                 <li className="flex items-center gap-2.5 text-muted-foreground text-sm">
                   <Mail className="w-4 h-4 text-primary flex-shrink-0" />
                   <a
-                    href="mailto:contact@ferow.org"
+                    href="mailto:contact@pantheon.org"
                     className="hover:text-foreground transition-colors"
                   >
-                    contact@ferow.org
+                    contact@pantheon.org
                   </a>
                 </li>
                 <li className="flex items-center gap-2.5 text-muted-foreground text-sm">
@@ -130,7 +133,10 @@ export function Layout({ children, hideNav = false }: LayoutProps) {
 
           {/* Bottom bar */}
           <div className="pt-8 border-t border-border/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-            <p>© {year} FEROW. Tous droits réservés.</p>
+            <p>
+              © {year} Pantheon — L'excellence au service de l'Afrique. Tous
+              droits réservés.
+            </p>
             <p>
               Built with love using{" "}
               <a

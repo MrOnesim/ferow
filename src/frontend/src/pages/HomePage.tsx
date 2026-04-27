@@ -5,6 +5,7 @@ import {
   BookOpen,
   Building,
   ChevronDown,
+  Crown,
   Heart,
   Lightbulb,
   Target,
@@ -27,46 +28,46 @@ import type { ArticleCategory } from "../types";
 
 const VALUES = [
   {
-    Icon: Award,
-    title: "Leadership",
+    Icon: Crown,
+    title: "Excellence du Leadership",
     description:
-      "Former et inspirer des leaders responsables capables de transformer leur communauté.",
+      "Former des leaders d'exception, capables de transformer leur communauté et d'influencer l'avenir avec autorité et vision.",
     colorClass: "text-primary",
     bgClass: "bg-primary/10 border-primary/20",
-    glowClass: "hover:shadow-[0_0_24px_oklch(0.5_0.18_264/0.25)]",
+    glowClass: "hover:shadow-[0_0_24px_oklch(0.82_0.10_85/0.25)]",
   },
   {
     Icon: Heart,
-    title: "Engagement",
+    title: "Engagement sans compromis",
     description:
-      "S'impliquer pleinement pour les causes qui façonnent l'avenir de notre société.",
+      "S'impliquer entièrement, sans demi-mesure ni hésitation — chaque membre Pantheon donne le meilleur de lui-même.",
     colorClass: "text-emerald-400",
     bgClass: "bg-emerald-900/20 border-emerald-400/20",
     glowClass: "hover:shadow-[0_0_24px_rgba(52,211,153,0.18)]",
   },
   {
     Icon: Target,
-    title: "Discipline",
+    title: "Discipline absolue",
     description:
-      "Agir avec rigueur, méthode et constance pour atteindre des objectifs ambitieux.",
+      "Agir avec rigueur, méthode et constance. L'excellence ne s'improvise pas — elle se construit chaque jour.",
     colorClass: "text-amber-400",
     bgClass: "bg-amber-900/20 border-amber-400/20",
     glowClass: "hover:shadow-[0_0_24px_rgba(251,191,36,0.18)]",
   },
   {
     Icon: TrendingUp,
-    title: "Impact",
+    title: "Impact Mesurable",
     description:
-      "Produire des résultats concrets et mesurables pour les jeunes et leurs communautés.",
+      "Produire des résultats concrets et vérifiables. Chez Pantheon, chaque action est évaluée à l'aune de son impact réel.",
     colorClass: "text-violet-400",
     bgClass: "bg-violet-900/20 border-violet-400/20",
     glowClass: "hover:shadow-[0_0_24px_rgba(167,139,250,0.18)]",
   },
   {
     Icon: Users,
-    title: "Unité",
+    title: "Solidarité d'élite",
     description:
-      "Construire un mouvement fort, soudé et diversifié autour d'une vision commune.",
+      "Une fraternité soudée, fondée sur la confiance et la loyauté. Ensemble, nous formons une force que rien ne peut diviser.",
     colorClass: "text-rose-400",
     bgClass: "bg-rose-900/20 border-rose-400/20",
     glowClass: "hover:shadow-[0_0_24px_rgba(251,113,133,0.18)]",
@@ -75,36 +76,36 @@ const VALUES = [
 
 const ACTIVITIES = [
   {
-    title: "Conférences de Leadership",
+    title: "Conférences de haut niveau",
     description:
-      "Des rencontres inspirantes avec des personnalités influentes pour former les leaders de demain.",
+      "Des rencontres d'exception avec les personnalités les plus influentes du continent, pour forger les leaders de demain.",
     image: "/assets/generated/activity-conference.dim_800x500.jpg",
     Icon: Lightbulb,
     color: "text-primary",
     bg: "bg-primary/10",
   },
   {
-    title: "Actions Sociales",
+    title: "Missions d'impact social",
     description:
-      "Distribution de kits scolaires, aide alimentaire et soutien aux populations vulnérables.",
+      "Des interventions ciblées et stratégiques auprès des populations — parce que l'excellence se mesure à l'impact généré.",
     image: "/assets/generated/activity-social.dim_800x500.jpg",
     Icon: Heart,
     color: "text-emerald-400",
     bg: "bg-emerald-900/20",
   },
   {
-    title: "Formations Professionnelles",
+    title: "Formations d'excellence",
     description:
-      "Programmes certifiants en entrepreneuriat, digital et développement personnel.",
+      "Des programmes rigoureux en entrepreneuriat, leadership et développement personnel, conçus pour les meilleurs.",
     image: "/assets/generated/activity-formation.dim_800x500.jpg",
     Icon: BookOpen,
     color: "text-amber-400",
     bg: "bg-amber-900/20",
   },
   {
-    title: "Sensibilisation Communautaire",
+    title: "Campagnes de sensibilisation stratégiques",
     description:
-      "Campagnes de mobilisation citoyenne dans les quartiers et communautés locales.",
+      "Des mobilisations citoyennes orchestrées avec précision pour transformer les consciences et catalyser le changement.",
     image: "/assets/generated/activity-sensibilisation.dim_800x500.jpg",
     Icon: Building,
     color: "text-violet-400",
@@ -117,7 +118,7 @@ const ACTIONS = [
     id: "a1",
     title: "Distribution de kits scolaires à Cotonou",
     description:
-      "200 enfants défavorisés ont reçu des kits complets, grâce à la mobilisation de 50 bénévoles engagés de FEROW.",
+      "200 enfants défavorisés ont reçu des kits complets, grâce à la mobilisation de 50 membres Pantheon engagés sur le terrain.",
     date: "15 mars 2025",
     category: "education" as ArticleCategory,
     image: "/assets/generated/activity-social.dim_800x500.jpg",
@@ -126,7 +127,7 @@ const ACTIONS = [
     id: "a2",
     title: "Conférence nationale sur le leadership jeune",
     description:
-      "300 jeunes leaders réunis pour débattre des défis et des opportunités de la jeunesse africaine.",
+      "300 jeunes leaders d'élite réunis pour débattre des défis et des opportunités stratégiques de la jeunesse africaine.",
     date: "20 février 2025",
     category: "leadership" as ArticleCategory,
     image: "/assets/generated/activity-conference.dim_800x500.jpg",
@@ -135,7 +136,7 @@ const ACTIONS = [
     id: "a3",
     title: "Formation professionnelle à Porto-Novo",
     description:
-      "80 jeunes ont bénéficié d'une formation en entrepreneuriat et compétences numériques.",
+      "80 jeunes ont bénéficié d'un programme d'excellence en entrepreneuriat et compétences numériques avancées.",
     date: "10 janvier 2025",
     category: "formation" as ArticleCategory,
     image: "/assets/generated/activity-formation.dim_800x500.jpg",
@@ -144,18 +145,25 @@ const ACTIONS = [
     id: "a4",
     title: "Campagne de sensibilisation à Parakou",
     description:
-      "Plus de 500 citoyens sensibilisés aux enjeux civiques et à la participation politique.",
+      "Plus de 500 citoyens mobilisés autour des enjeux civiques et de la participation politique active.",
     date: "5 décembre 2024",
     category: "social" as ArticleCategory,
     image: "/assets/generated/activity-sensibilisation.dim_800x500.jpg",
   },
 ];
 
-const STATS = [
-  { target: 500, suffix: "+", label: "Jeunes impactés", Icon: Users },
-  { target: 20, suffix: "+", label: "Actions réalisées", Icon: Target },
-  { target: 5, suffix: "+", label: "Villes touchées", Icon: Building },
-  { target: 1000, suffix: "+", label: "Bénéficiaires", Icon: Heart },
+const HERO_STATS = [
+  { value: "500+", label: "Membres d'élite" },
+  { value: "5 ans", label: "d'excellence" },
+  { value: "12", label: "pays représentés" },
+  { value: "50+", label: "Partenaires stratégiques" },
+];
+
+const IMPACT_STATS = [
+  { target: 500, suffix: "+", label: "Membres d'élite", Icon: Users },
+  { target: 20, suffix: "+", label: "Réalisations majeures", Icon: Target },
+  { target: 12, suffix: "", label: "Pays représentés", Icon: Building },
+  { target: 1000, suffix: "+", label: "Vies transformées", Icon: Heart },
 ];
 
 // ─── COMPONENT ───────────────────────────────────────────────────────────────
@@ -205,7 +213,7 @@ export default function HomePage() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
           style={{
             backgroundImage:
-              "url(/assets/generated/hero-ferow.dim_1920x800.jpg)",
+              "url(/assets/generated/hero-pantheon.dim_1920x800.jpg)",
           }}
         />
         {/* Dark overlay layers */}
@@ -214,7 +222,7 @@ export default function HomePage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, transparent 0%, oklch(0.38 0.16 264 / 0.3) 40%, oklch(0.07 0.008 270 / 0.9) 100%)",
+              "linear-gradient(to bottom, transparent 0%, oklch(0.75 0.12 85 / 0.3) 40%, oklch(0.07 0.008 270 / 0.9) 100%)",
           }}
         />
 
@@ -224,31 +232,33 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
           >
+            {/* Exclusivity badge */}
             <motion.span
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="inline-block px-4 py-1.5 mb-8 rounded-full border text-sm font-semibold font-display tracking-wide"
+              className="inline-flex items-center gap-2 px-5 py-2 mb-8 rounded-full border text-sm font-semibold font-display tracking-wide"
               style={{
-                backgroundColor: "oklch(0.38 0.16 264 / 0.25)",
-                borderColor: "oklch(0.5 0.18 264 / 0.5)",
-                color: "oklch(0.75 0.12 264)",
+                backgroundColor: "oklch(0.75 0.12 85 / 0.15)",
+                borderColor: "oklch(0.82 0.10 85 / 0.5)",
+                color: "oklch(0.90 0.10 85)",
               }}
             >
-              🇧🇯 Mouvement National · Bénin
+              <Crown className="w-3.5 h-3.5" />
+              Membership sélectif — Réservé aux leaders ambitieux
             </motion.span>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black text-foreground leading-[1.05] text-balance mb-6">
-              Construisons l'avenir
+              Pour ceux qui visent
               <br />
               <span
                 className="text-transparent bg-clip-text"
                 style={{
                   backgroundImage:
-                    "linear-gradient(135deg, oklch(0.65 0.16 264), oklch(0.80 0.12 200))",
+                    "linear-gradient(135deg, oklch(0.75 0.12 85), oklch(0.90 0.08 75))",
                 }}
               >
-                avec une jeunesse engagée
+                l'excellence.
               </span>
             </h1>
 
@@ -256,8 +266,8 @@ export default function HomePage() {
               className="text-xl md:text-2xl max-w-2xl mx-auto mb-12 leading-relaxed"
               style={{ color: "oklch(0.97 0 0 / 0.75)" }}
             >
-              FEROW est un mouvement dédié au leadership et à l'impact social.
-              Rejoignez des milliers de jeunes qui transforment leur communauté.
+              Pantheon réunit les leaders de demain — ambitieux, engagés,
+              déterminés à changer le monde.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -269,7 +279,7 @@ export default function HomePage() {
                 className="btn-primary text-lg px-10 py-4 rounded-xl shadow-glow-lg hover:shadow-glow-lg transition-smooth inline-flex items-center justify-center gap-2"
                 data-ocid="hero.join_button"
               >
-                Rejoindre maintenant
+                Demander l'adhésion
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
               <motion.button
@@ -280,7 +290,7 @@ export default function HomePage() {
                 className="btn-secondary text-lg px-10 py-4 rounded-xl inline-flex items-center justify-center gap-2"
                 data-ocid="hero.discover_button"
               >
-                Découvrir
+                Découvrir notre mission
                 <ChevronDown className="w-5 h-5" />
               </motion.button>
             </div>
@@ -293,19 +303,19 @@ export default function HomePage() {
             transition={{ delay: 0.7, duration: 0.7 }}
             className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto"
           >
-            {STATS.map((stat) => (
+            {HERO_STATS.map((stat) => (
               <div
                 key={stat.label}
                 className="rounded-xl px-4 py-3 text-center"
                 style={{
                   backgroundColor: "oklch(0.07 0.008 270 / 0.6)",
                   borderWidth: 1,
-                  borderColor: "oklch(0.5 0.18 264 / 0.2)",
+                  borderColor: "oklch(0.82 0.10 85 / 0.2)",
                   backdropFilter: "blur(8px)",
                 }}
               >
                 <p className="text-2xl font-display font-black text-foreground">
-                  {stat.suffix === "+" ? `+${stat.target}` : stat.target}
+                  {stat.value}
                 </p>
                 <p className="text-xs text-muted-foreground mt-0.5">
                   {stat.label}
@@ -313,6 +323,19 @@ export default function HomePage() {
               </div>
             ))}
           </motion.div>
+
+          {/* Gold divider */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ delay: 1.1, duration: 0.8 }}
+            className="mt-12 mx-auto max-w-xs h-px"
+            style={{
+              background:
+                "linear-gradient(to right, transparent, oklch(0.82 0.10 85 / 0.6), transparent)",
+            }}
+            aria-hidden="true"
+          />
         </div>
 
         {/* Scroll indicator */}
@@ -346,16 +369,15 @@ export default function HomePage() {
               transition={{ duration: 0.7 }}
             >
               <span className="text-primary font-semibold text-sm uppercase tracking-widest">
-                À propos de FEROW
+                À propos de Pantheon
               </span>
               <h2 className="text-4xl md:text-5xl font-display font-black text-foreground mt-3 mb-6 leading-tight">
-                Un mouvement pour une génération de leaders
+                L'excellence comme fondement
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-10">
-                La Fédération Nationale des Mouvements de Soutien à Romuald
-                Wadagni (FEROW) est un mouvement politique et social engagé dans
-                la formation, l'inspiration et la mobilisation d'une nouvelle
-                génération de leaders responsables au Bénin.
+                Nous ne sommes pas un mouvement ordinaire. Pantheon est une
+                communauté d'individus exceptionnels qui partagent une vision :
+                bâtir l'Afrique de demain.
               </p>
 
               <div className="space-y-6 mb-10">
@@ -365,14 +387,14 @@ export default function HomePage() {
                     color: "text-primary",
                     bg: "bg-primary/10 border-primary/20",
                     title: "Notre Mission",
-                    desc: "Former, inspirer et mobiliser une nouvelle génération de leaders responsables.",
+                    desc: "Identifier, former et élever une élite de leaders responsables, capables de transformer durablement leur société.",
                   },
                   {
                     Icon: Award,
                     color: "text-accent",
                     bg: "bg-accent/10 border-accent/20",
                     title: "Notre Vision",
-                    desc: "Construire une société où chaque jeune a les moyens d'agir et d'influencer positivement.",
+                    desc: "Un continent africain gouverné par des femmes et des hommes d'exception, nourris par l'ambition et guidés par l'intégrité.",
                   },
                 ].map(({ Icon, color, bg, title, desc }) => (
                   <div key={title} className="flex gap-4">
@@ -400,7 +422,7 @@ export default function HomePage() {
                     key={v.title}
                     className={`px-4 py-1.5 rounded-full text-sm font-semibold font-display border ${v.bgClass} ${v.colorClass}`}
                   >
-                    {v.title}
+                    {v.title.split(" ")[0]}
                   </span>
                 ))}
               </div>
@@ -416,8 +438,8 @@ export default function HomePage() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-glow-lg">
                 <img
-                  src="/assets/generated/hero-ferow.dim_1920x800.jpg"
-                  alt="Leadership FEROW — jeunes leaders engagés"
+                  src="/assets/generated/hero-pantheon.dim_1920x800.jpg"
+                  alt="Leadership Pantheon — l'élite de demain"
                   className="w-full h-[520px] object-cover"
                   style={{ objectPosition: "center 30%" }}
                 />
@@ -432,10 +454,10 @@ export default function HomePage() {
                 className="absolute -bottom-6 -left-6 card-elevated p-6 max-w-xs shadow-glow"
               >
                 <p className="text-3xl font-display font-black text-foreground">
-                  +1000
+                  +500
                 </p>
                 <p className="text-muted-foreground text-sm mt-1">
-                  membres actifs à travers le Bénin
+                  membres d'élite à travers 12 pays
                 </p>
                 <div className="flex items-center gap-1 mt-3">
                   {[...Array(5)].map((_, i) => (
@@ -447,7 +469,7 @@ export default function HomePage() {
                     />
                   ))}
                   <span className="text-xs text-muted-foreground ml-2">
-                    et plus encore
+                    et bien plus
                   </span>
                 </div>
               </motion.div>
@@ -461,7 +483,7 @@ export default function HomePage() {
                 className="absolute -top-4 -right-4 rounded-full w-20 h-20 flex items-center justify-center text-center shadow-glow"
                 style={{
                   background:
-                    "linear-gradient(135deg, oklch(0.38 0.16 264), oklch(0.5 0.18 264))",
+                    "linear-gradient(135deg, oklch(0.75 0.12 85), oklch(0.82 0.10 85))",
                 }}
               >
                 <div>
@@ -480,14 +502,16 @@ export default function HomePage() {
 
       {/* ─── VALUES ─── */}
       <section
+        id="valeurs"
         className="py-28 section-alt"
         data-ocid="values.section"
         style={{ background: "oklch(0.07 0.008 270)" }}
       >
         <div className="container mx-auto px-4">
           <SectionHeading
-            title="Nos Valeurs"
-            subtitle="Les principes fondateurs qui guident chacune de nos actions et décisions."
+            eyebrow="Ce qui nous définit"
+            title="Les piliers de l'excellence"
+            subtitle="Les valeurs qui définissent chaque membre Pantheon — des exigences que nous nous imposons collectivement."
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {VALUES.map((value, i) => (
@@ -525,8 +549,9 @@ export default function HomePage() {
       >
         <div className="container mx-auto px-4">
           <SectionHeading
-            title="Nos Activités"
-            subtitle="Découvrez les actions concrètes que FEROW mène sur le terrain pour transformer les communautés."
+            eyebrow="Nos programmes"
+            title="Nos activités d'excellence"
+            subtitle="Des programmes conçus pour forger les leaders de demain — exigeants, transformateurs, à la hauteur de nos ambitions."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {ACTIVITIES.map((activity, i) => (
@@ -578,7 +603,7 @@ export default function HomePage() {
           className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 1px 1px, oklch(0.5 0.18 264) 1px, transparent 0)",
+              "radial-gradient(circle at 1px 1px, oklch(0.82 0.10 85) 1px, transparent 0)",
             backgroundSize: "40px 40px",
           }}
           aria-hidden="true"
@@ -586,8 +611,9 @@ export default function HomePage() {
 
         <div className="relative container mx-auto px-4">
           <SectionHeading
-            title="Nos Actions & Réalisations"
-            subtitle="Découvrez les initiatives concrètes menées par FEROW pour impacter la société."
+            eyebrow="Preuve par les faits"
+            title="Réalisations Pantheon"
+            subtitle="Des actions concrètes. Un impact mesurable. Une excellence prouvée."
           />
 
           {/* Category filter */}
@@ -663,15 +689,15 @@ export default function HomePage() {
             className="rounded-2xl border p-10"
             style={{
               background:
-                "linear-gradient(135deg, oklch(0.1 0.018 264), oklch(0.08 0.012 270))",
-              borderColor: "oklch(0.5 0.18 264 / 0.15)",
+                "linear-gradient(135deg, oklch(0.1 0.018 85), oklch(0.08 0.012 270))",
+              borderColor: "oklch(0.82 0.10 85 / 0.15)",
             }}
           >
             <p className="text-center text-sm font-semibold text-primary uppercase tracking-widest mb-10">
-              Nos chiffres clés
+              Nos chiffres d'excellence
             </p>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-              {STATS.map((stat, i) => (
+              {IMPACT_STATS.map((stat, i) => (
                 <div key={stat.label} data-ocid={`actions.stat.${i + 1}`}>
                   <AnimatedCounter
                     target={stat.target}
@@ -687,7 +713,10 @@ export default function HomePage() {
       </section>
 
       {/* ─── GALLERY ─── */}
-      <GallerySection />
+      <GallerySection
+        title="Moments d'excellence"
+        subtitle="Découvrez Pantheon en action — événements, formations, et engagements terrain"
+      />
 
       {/* ─── IMPACT SECTION ─── */}
       <section
@@ -697,12 +726,13 @@ export default function HomePage() {
       >
         <div className="container mx-auto px-4">
           <SectionHeading
-            title="Notre Impact"
-            subtitle="Des résultats concrets qui témoignent de l'engagement de FEROW sur le terrain."
+            eyebrow="Nos résultats"
+            title="L'impact Pantheon en chiffres"
+            subtitle="Des résultats concrets qui témoignent de notre excellence collective — mesurés, vérifiés, prouvés."
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {STATS.map((stat, i) => (
+            {IMPACT_STATS.map((stat, i) => (
               <motion.div
                 key={stat.label}
                 initial={{ opacity: 0, y: 30 }}
@@ -712,7 +742,7 @@ export default function HomePage() {
                 className="card-elevated p-8 text-center group card-hover"
                 data-ocid={`impact.stat.${i + 1}`}
                 style={{
-                  borderTop: "3px solid oklch(0.5 0.18 264)",
+                  borderTop: "3px solid oklch(0.75 0.12 85)",
                 }}
               >
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/20 transition-smooth">
@@ -740,8 +770,9 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <SectionHeading
-              title="Dernières Actualités"
-              subtitle="Restez informé des dernières actions et initiatives de FEROW."
+              eyebrow="Tribune & Analyses"
+              title="La voix de l'élite"
+              subtitle="Analyses, tribunes et perspectives de nos membres et leaders — pour ceux qui façonnent le monde."
               align="left"
               className="mb-0"
             />
@@ -750,7 +781,7 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 text-primary font-semibold hover:text-accent transition-colors whitespace-nowrap shrink-0"
               data-ocid="blog.view_all"
             >
-              Voir tout le blog
+              Voir toutes les publications
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -784,9 +815,11 @@ export default function HomePage() {
             >
               <BookOpen className="w-12 h-12 mx-auto mb-4 opacity-30" />
               <p className="font-display font-semibold text-foreground mb-2">
-                Aucun article disponible
+                Aucune publication disponible
               </p>
-              <p className="text-sm">Les articles seront bientôt publiés.</p>
+              <p className="text-sm">
+                Les analyses et tribunes seront bientôt publiées.
+              </p>
             </div>
           )}
         </div>
@@ -796,7 +829,7 @@ export default function HomePage() {
       <section
         id="rejoindre"
         className="py-28 relative overflow-hidden"
-        style={{ background: "oklch(0.38 0.16 264)" }}
+        style={{ background: "oklch(0.75 0.12 85)" }}
         data-ocid="join.section"
       >
         {/* Background decorative */}
@@ -804,7 +837,7 @@ export default function HomePage() {
           className="absolute inset-0 opacity-10"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 80% 20%, oklch(0.55 0.15 200), transparent 50%), radial-gradient(circle at 20% 80%, oklch(0.3 0.1 264), transparent 50%)",
+              "radial-gradient(circle at 80% 20%, oklch(0.90 0.08 75), transparent 50%), radial-gradient(circle at 20% 80%, oklch(0.60 0.10 85), transparent 50%)",
           }}
           aria-hidden="true"
         />
@@ -816,29 +849,37 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-center mb-12"
+              className="text-center mb-10"
             >
               <span
-                className="inline-block px-4 py-1.5 mb-4 rounded-full text-xs font-semibold uppercase tracking-widest font-display"
+                className="inline-flex items-center gap-2 px-5 py-1.5 mb-4 rounded-full text-xs font-semibold uppercase tracking-widest font-display"
                 style={{
-                  backgroundColor: "oklch(0.97 0 0 / 0.15)",
-                  color: "oklch(0.97 0 0 / 0.9)",
+                  backgroundColor: "oklch(0.07 0.008 270 / 0.15)",
+                  color: "oklch(0.07 0.008 270 / 0.9)",
                 }}
               >
-                Rejoignez le mouvement
+                <Crown className="w-3 h-3" />
+                Candidature d'adhésion
               </span>
               <h2
                 className="text-4xl md:text-5xl font-display font-black leading-tight mb-4"
-                style={{ color: "oklch(0.97 0 0)" }}
+                style={{ color: "oklch(0.07 0.008 270)" }}
               >
-                Rejoignez une communauté engagée
+                Rejoindre l'élite Pantheon
               </h2>
               <p
-                className="text-lg leading-relaxed"
-                style={{ color: "oklch(0.97 0 0 / 0.75)" }}
+                className="text-lg leading-relaxed mb-3"
+                style={{ color: "oklch(0.07 0.008 270 / 0.75)" }}
               >
-                Faites partie d'une communauté de jeunes leaders qui
-                transforment le Bénin.
+                L'adhésion à Pantheon est sélective. Nous examinons chaque
+                candidature avec la plus grande attention.
+              </p>
+              <p
+                className="text-sm font-semibold font-display"
+                style={{ color: "oklch(0.07 0.008 270 / 0.65)" }}
+              >
+                Seuls les candidats partageant nos valeurs d'excellence,
+                d'engagement et de leadership seront retenus.
               </p>
             </motion.div>
 
@@ -848,29 +889,29 @@ export default function HomePage() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="rounded-2xl p-10 text-center"
                 style={{
-                  backgroundColor: "oklch(0.97 0 0 / 0.1)",
-                  border: "1px solid oklch(0.97 0 0 / 0.2)",
+                  backgroundColor: "oklch(0.07 0.008 270 / 0.1)",
+                  border: "1px solid oklch(0.07 0.008 270 / 0.2)",
                 }}
                 data-ocid="join.success_state"
               >
                 <div
                   className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
-                  style={{ backgroundColor: "oklch(0.97 0 0 / 0.15)" }}
+                  style={{ backgroundColor: "oklch(0.07 0.008 270 / 0.15)" }}
                 >
                   <Award
                     className="w-8 h-8"
-                    style={{ color: "oklch(0.97 0 0)" }}
+                    style={{ color: "oklch(0.07 0.008 270)" }}
                   />
                 </div>
                 <h3
                   className="text-2xl font-display font-bold mb-3"
-                  style={{ color: "oklch(0.97 0 0)" }}
+                  style={{ color: "oklch(0.07 0.008 270)" }}
                 >
-                  Bienvenue dans FEROW !
+                  Candidature transmise
                 </h3>
-                <p style={{ color: "oklch(0.97 0 0 / 0.75)" }}>
-                  Votre candidature a été reçue avec succès. Notre équipe vous
-                  contactera très prochainement.
+                <p style={{ color: "oklch(0.07 0.008 270 / 0.75)" }}>
+                  Votre candidature a été transmise. Notre équipe l'examinera
+                  avec attention.
                 </p>
               </motion.div>
             ) : (
@@ -897,7 +938,7 @@ export default function HomePage() {
                       style={{ color: "oklch(0.97 0 0 / 0.9)" }}
                       htmlFor="nom"
                     >
-                      Nom complet{" "}
+                      Votre nom complet{" "}
                       <span style={{ color: "oklch(0.7 0.22 25)" }}>*</span>
                     </label>
                     <input
@@ -911,7 +952,7 @@ export default function HomePage() {
                           ? "1px solid oklch(0.7 0.22 25)"
                           : "1px solid oklch(0.97 0 0 / 0.15)",
                       }}
-                      placeholder="Votre nom complet"
+                      placeholder="Prénom et nom de famille"
                       data-ocid="join.nom.input"
                     />
                     {errors.nom && (
@@ -996,7 +1037,7 @@ export default function HomePage() {
                       style={{ color: "oklch(0.97 0 0 / 0.9)" }}
                       htmlFor="ville"
                     >
-                      Ville{" "}
+                      Ville de résidence{" "}
                       <span style={{ color: "oklch(0.7 0.22 25)" }}>*</span>
                     </label>
                     <input
@@ -1012,7 +1053,7 @@ export default function HomePage() {
                           ? "1px solid oklch(0.7 0.22 25)"
                           : "1px solid oklch(0.97 0 0 / 0.15)",
                       }}
-                      placeholder="Votre ville"
+                      placeholder="Cotonou, Paris, Abidjan..."
                       data-ocid="join.ville.input"
                     />
                     {errors.ville && (
@@ -1027,25 +1068,25 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {/* Message */}
+                {/* Message — motivation élite */}
                 <div>
                   <label
                     className="block text-sm font-medium mb-1.5"
                     style={{ color: "oklch(0.97 0 0 / 0.9)" }}
                     htmlFor="message"
                   >
-                    Message (optionnel)
+                    Pourquoi méritez-vous de rejoindre l'élite Pantheon ?
                   </label>
                   <textarea
                     id="message"
                     {...register("message")}
-                    rows={3}
+                    rows={4}
                     className="w-full px-4 py-3 rounded-xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 transition-smooth resize-none"
                     style={{
                       backgroundColor: "oklch(0.1 0.01 270 / 0.8)",
                       border: "1px solid oklch(0.97 0 0 / 0.15)",
                     }}
-                    placeholder="Pourquoi souhaitez-vous rejoindre FEROW ?"
+                    placeholder="Décrivez votre parcours, vos ambitions et pourquoi vous souhaitez intégrer Pantheon..."
                     data-ocid="join.message.textarea"
                   />
                 </div>
@@ -1065,8 +1106,8 @@ export default function HomePage() {
                   disabled={formState === "submitting"}
                   className="w-full py-4 text-base rounded-xl font-display font-bold transition-smooth disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   style={{
-                    backgroundColor: "oklch(0.97 0 0)",
-                    color: "oklch(0.38 0.16 264)",
+                    backgroundColor: "oklch(0.07 0.008 270)",
+                    color: "oklch(0.75 0.12 85)",
                   }}
                   data-ocid="join.submit_button"
                 >
@@ -1077,7 +1118,7 @@ export default function HomePage() {
                     </>
                   ) : (
                     <>
-                      Rejoindre maintenant
+                      Soumettre ma candidature
                       <ArrowRight className="w-5 h-5" />
                     </>
                   )}

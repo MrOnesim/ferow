@@ -254,7 +254,7 @@ function GalleryEmpty() {
         Aucune photo disponible pour le moment.
       </h3>
       <p className="text-muted-foreground text-sm max-w-sm">
-        Les photos seront ajoutées prochainement par l'équipe FEROW. Revenez
+        Les photos seront ajoutées prochainement par l'équipe Pantheon. Revenez
         bientôt !
       </p>
     </motion.div>
@@ -321,7 +321,7 @@ export default function GalleryPage() {
           className="absolute inset-0 opacity-[0.06]"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 1px 1px, oklch(0.5 0.18 264) 1px, transparent 0)",
+              "radial-gradient(circle at 1px 1px, oklch(0.82 0.10 85) 1px, transparent 0)",
             backgroundSize: "40px 40px",
           }}
           aria-hidden="true"
@@ -330,7 +330,7 @@ export default function GalleryPage() {
           className="absolute inset-0 opacity-30"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 70% 30%, oklch(0.38 0.16 264 / 0.4), transparent 60%)",
+              "radial-gradient(circle at 70% 30%, oklch(0.75 0.12 85 / 0.4), transparent 60%)",
           }}
           aria-hidden="true"
         />
@@ -341,9 +341,9 @@ export default function GalleryPage() {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="inline-block px-4 py-1.5 mb-6 rounded-full border text-sm font-semibold font-display tracking-wide"
             style={{
-              backgroundColor: "oklch(0.38 0.16 264 / 0.2)",
-              borderColor: "oklch(0.5 0.18 264 / 0.4)",
-              color: "oklch(0.75 0.12 264)",
+              backgroundColor: "oklch(0.75 0.12 85 / 0.2)",
+              borderColor: "oklch(0.82 0.10 85 / 0.4)",
+              color: "oklch(0.90 0.08 75)",
             }}
           >
             Nos moments en images
@@ -359,7 +359,7 @@ export default function GalleryPage() {
               className="text-transparent bg-clip-text"
               style={{
                 backgroundImage:
-                  "linear-gradient(135deg, oklch(0.65 0.16 264), oklch(0.80 0.12 200))",
+                  "linear-gradient(135deg, oklch(0.75 0.12 85), oklch(0.90 0.08 75))",
               }}
             >
               Photo

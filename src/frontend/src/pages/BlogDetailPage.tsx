@@ -38,11 +38,11 @@ export default function BlogDetailPage() {
   // SEO: update document title
   useEffect(() => {
     if (article) {
-      document.title = `${article.title} — FEROW`;
+      document.title = `${article.title} — Pantheon`;
     }
     return () => {
       document.title =
-        "FEROW — Fédération Nationale des Mouvements de Soutien à Romuald Wadagni";
+        "Pantheon — Mouvement National de Leadership et d'Impact Social";
     };
   }, [article]);
 
@@ -53,7 +53,7 @@ export default function BlogDetailPage() {
   // WhatsApp share URL
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
   const whatsappShare = `https://wa.me/?text=${encodeURIComponent(
-    `${article?.title ?? ""} — Découvrez cet article de FEROW : ${shareUrl}`,
+    `${article?.title ?? ""} — Découvrez cet article de Pantheon : ${shareUrl}`,
   )}`;
 
   // ── Loading state ──
@@ -184,7 +184,7 @@ export default function BlogDetailPage() {
 
             <p
               className="text-muted-foreground text-lg leading-relaxed border-l-4 pl-4 italic mb-8"
-              style={{ borderColor: "var(--ferow-navy-light)" }}
+              style={{ borderColor: "var(--pantheon-gold-light)" }}
             >
               {article.excerpt}
             </p>
